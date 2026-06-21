@@ -1,0 +1,164 @@
+/* ==========================================================================
+   NEXOLION STUDIO - SISTEMA DE ESTILOS CENTRAL
+   ========================================================================== */
+
+/* === 1. VARIABLES GLOBALES & TEMAS (Paleta de image_10.png) === */
+:root {
+    /* Paleta de image_10.png (Predeterminado Claro) */
+    --bg-base: #f8f9fa;       /* Fondo súper claro */
+    --bg-card: #ffffff;       /* Fondo de tarjetas puro */
+    --border-color: #e5e7eb;  /* Bordes sutiles */
+    
+    /* Tipografía */
+    --text-main: #030712;     /* Texto principal muy oscuro */
+    --text-muted: #4b5563;    /* Texto secundario gris */
+    
+    /* Colores Semánticos */
+    --color-primary: #002855; /* Azul profundo del texto de image_10.png */
+    --color-accent: #c9a060;  /* Dorado de image_10.png */
+    --color-neural: #4cc9f0;  /* Cian sutil simulando las conexiones neurales */
+    --color-success: #10b981; /* Verde neón (reuse) */
+    --color-danger: #ef4444;  /* Rojo (reuse) */
+    --color-warning: #f59e0b; /* Naranja (reuse) */
+    
+    /* Sombras y Formas */
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-neural: 0 0 15px rgba(76, 201, 240, 0.3); /* Resplandor neural sutil */
+    --border-radius: 16px;
+    
+    /* SVG Patrón Neural (Inspirado en image_10.png) */
+    --pattern-neural: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a060' fill-opacity='0.08'%3E%3Cpath d='M50 40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zM10 70c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z'/%3E%3C/g%3E%3Cg fill='%234cc9f0' fill-opacity='0.05'%3E%3Cpath d='M30 40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z'/%3E%3C/g%3E%3Cg stroke='%234cc9f0' stroke-opacity='0.05'%3E%3Cpath d='M20 20l20 20m0 0l20-20M40 40L20 60m20-20l20 20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* === OVERRIDES PARA MODO OSCURO === */
+body.dark-mode {
+    --bg-base: #030712;       /* Fondo súper oscuro (reuse) */
+    --bg-card: #0b1120;       /* Fondo de tarjetas oscuro (reuse) */
+    --border-color: #1f2937;  /* Bordes sutiles oscuros (reuse) */
+    --text-main: #f3f4f6;     /* Texto principal claro (reuse) */
+    --text-muted: #9ca3af;    /* Texto secundario gris (reuse) */
+    --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.5); /* Sombra oscura (reuse) */
+    
+    /* SVG Patrón Neural Oscuro */
+    --pattern-neural: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a060' fill-opacity='0.15'%3E%3Cpath d='M50 40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zM10 70c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z'/%3E%3C/g%3E%3Cg fill='%234cc9f0' fill-opacity='0.1'%3E%3Cpath d='M30 40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z'/%3E%3C/g%3E%3Cg stroke='%234cc9f0' stroke-opacity='0.1'%3E%3Cpath d='M20 20l20 20m0 0l20-20M40 40L20 60m20-20l20 20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* === 2. RESET, BASE & LAYOUT (Reuse de FinanzasPro) === */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* === 3. CLASES UTILITARIAS Y DE PATRÓN === */
+.hidden { display: none !important; }
+.w-100 { width: 100%; }
+.mt-1 { margin-top: 1rem; }
+.highlight { color: var(--color-accent) !important; font-weight: 700; }
+.pattern-neural-bg { background-image: var(--pattern-neural); }
+
+/* === 4. HEADER & NAVEGACIÓN === */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;
+}
+body.dark-mode .main-header { background-color: rgba(3, 7, 18, 0.85); }
+
+.header-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; }
+
+.logo { display: flex; align-items: center; gap: 8px; }
+.logo h1, .logo h3 { font-size: 1.4rem; margin: 0; font-weight: 700; color: var(--color-primary); }
+body.dark-mode .logo h1, body.dark-mode .logo h3 { color: #fff; }
+.accent-icon { color: var(--color-accent); font-size: 28px; }
+
+.main-nav { display: flex; align-items: center; gap: 1.5rem; }
+.main-nav a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
+.main-nav a:hover { color: var(--color-primary); }
+body.dark-mode .main-nav a:hover { color: #fff; }
+
+.theme-btn {
+    background: none; border: none; color: var(--text-muted); cursor: pointer;
+    padding: 6px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+}
+.theme-btn:hover { color: var(--color-neural); background-color: rgba(76, 201, 240, 0.05); }
+
+/* === 5. HERO SECTION (IA + PWA) === */
+.hero-section {
+    padding: 6rem 1.5rem; text-align: center; border-radius: var(--border-radius);
+    margin: 2rem 0; box-shadow: var(--shadow-neural);
+}
+.hero-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.hero-title { font-size: 3rem; font-weight: 800; margin: 0; color: var(--text-main); }
+.hero-tagline { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; max-width: 700px; margin: 0; }
+.hero-actions { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; }
+
+/* === 6. SISTEMA DE BOTONES (Reuse y adaptación de image_10.png) === */
+.btn-primary, .btn-secondary {
+    padding: 14px 24px; border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 600;
+    color: #fff; cursor: pointer; text-decoration: none; text-align: center;
+    transition: opacity 0.3s, transform 0.1s, box-shadow 0.3s;
+}
+.btn-primary:active, .btn-secondary:active { transform: scale(0.98); }
+
+.btn-primary { background: var(--color-primary); }
+.btn-primary:hover { box-shadow: 0 4px 10px rgba(0, 40, 85, 0.2); }
+body.dark-mode .btn-primary:hover { box-shadow: 0 4px 10px rgba(76, 201, 240, 0.2); }
+
+.btn-secondary { background: var(--color-accent); color: var(--color-primary); }
+.btn-secondary:hover { box-shadow: 0 4px 10px rgba(201, 160, 96, 0.2); }
+body.dark-mode .btn-secondary { color: #fff; }
+
+/* === 7. SECCIONES GENERALES & DASHBOARD GRID (Reuse visual) === */
+.section { padding: 4rem 0; }
+.section-header { text-align: center; margin-bottom: 2.5rem; }
+.section-title { font-size: 2.2rem; font-weight: 700; margin: 0; color: var(--text-main); }
+.section-subtitle { font-size: 1rem; color: var(--text-muted); margin: 0.5rem 0 0 0; }
+
+.dashboard-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem; padding: 0.5rem;
+}
+
+/* === 8. TARJETAS (CARDS) SaaS & CASOS (Reuse y adaptación visual) === */
+.card {
+    background-color: var(--bg-card); border: 1px solid var(--border-color);
+    border-radius: var(--border-radius); padding: 2rem; box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;
+}
+.card:hover { border-color: var(--color-neural); transform: translateY(-3px); box-shadow: var(--shadow-neural); }
+
+.card-icon { width: fit-content; padding: 15px; border-radius: 12px; }
+.icon-ai { background-color: rgba(139, 92, 246, 0.05); color: var(--color-neural); }
+.icon-success { background-color: rgba(16, 185, 129, 0.05); color: var(--color-success); }
+.icon-warning { background-color: rgba(245, 158, 11, 0.05); color: var(--color-warning); }
+.icon-primary { background-color: rgba(0, 40, 85, 0.05); color: var(--color-primary); }
+
+.card-data { display: flex; flex-direction: column; gap: 4px; }
+.card-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+.card-value { font-size: 1.8rem; font-weight: 700; margin: 0; color: var(--color-primary); }
+body.dark-mode .card-value { color: #fff; }
+.card-description { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin: 0.5rem 0 0 0; }
+
+.card-subtext { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+/* === 9. FOOTER ( Reuse visual adaptado) === */
+.main-footer {
+    background-color: var(--color-primary); color: #fff;
+    padding: 4rem 0 2rem 0; margin-top: 4rem; border-top: 2px solid var(--color-neural);
+}
+.footer-content { display: flex; flex-direction: column; gap: 2rem; }
+.footer-sections { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+.footer-col h4 { margin: 0 0 1rem 0; font-size: 1.1rem; color: var(--color-neural); }
+.footer-link { display: block; text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 10px; transition: color 0.2s; }
+.footer-link:hover { color: var(--color-accent); }
+.footer-text { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin: 0; }
+.footer-copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
