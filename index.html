@@ -8,23 +8,40 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="light-mode"> <header class="main-header">
+<body class="light-mode"> 
+    
+    <header class="main-header">
         <div class="main-container header-content">
             <div class="logo">
                 <span class="material-icons accent-icon">toll</span> <h1>NexoLion <span class="highlight">Studio</span></h1>
             </div>
-            <nav class="main-nav">
+            
+            <nav class="desktop-nav">
                 <a href="#hero">Inicio</a>
                 <a href="#saas">Software (SaaS)</a>
                 <a href="#casos">Software a medida</a>
                 <a href="#nosotros">Nosotros</a>
-                <a href="#contacto">Soporte</a>
+                <a href="#soporte">Soporte</a>
+            </nav>
+
+            <div class="header-actions">
                 <button id="theme-toggle" class="theme-btn">
                     <span class="material-icons" id="theme-icon">dark_mode</span>
                 </button>
-            </nav>
+                <button id="hamburger-btn" class="hamburger-btn">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
         </div>
     </header>
+
+    <nav id="mobile-menu" class="mobile-nav">
+        <a href="#hero" class="mobile-link">Inicio</a>
+        <a href="#saas" class="mobile-link">Software (SaaS)</a>
+        <a href="#casos" class="mobile-link">Software a medida</a>
+        <a href="#nosotros" class="mobile-link">Nosotros</a>
+        <a href="#soporte" class="mobile-link">Soporte</a>
+    </nav>
 
     <main class="main-container">
         
@@ -36,7 +53,7 @@
                 </p>
                 <div class="hero-actions w-100">
                     <a href="#saas" class="btn-primary">Ver Productos</a>
-                    <a href="#contacto" class="btn-secondary">Consultar Soporte</a>
+                    <a href="#soporte" class="btn-secondary">Consultar Soporte</a>
                 </div>
             </div>
         </section>
@@ -55,7 +72,7 @@
                         <h3 class="card-value">Finanzas<span class="highlight">Pro</span></h3>
                         <p class="card-description">Gestión de portafolio familiar con proyección inteligente de flujo de caja.</p>
                     </div>
-                    <a href="http://localhost:8000" target="_blank" class="btn-primary w-100 mt-1">Adquirir Licencia</a>
+                    <button class="btn-secondary w-100 mt-1 disabled-btn">Próximamente</button>
                 </article>
 
                 <article class="card saas-card">
@@ -65,7 +82,7 @@
                         <h3 class="card-value">Agro<span class="highlight">Norte</span></h3>
                         <p class="card-description">Cotizaciones de granos en tiempo real e integraciones logísticas rurales.</p>
                     </div>
-                    <a href="https://emaaccas.pythonanywhere.com/login" target="_blank" class="btn-primary w-100 mt-1">Adquirir Licencia</a>
+                    <a href="https://emaaccas.pythonanywhere.com/login" target="_blank" class="btn-primary w-100 mt-1">Ingresar / Solicitar Licencia</a>
                 </article>
             </div>
         </section>
@@ -84,7 +101,7 @@
                         <h3 class="card-value">Mini<span class="highlight">Chic</span></h3>
                         <p class="card-description">Catálogo web estacional dinámico para tienda de indumentaria.</p>
                     </div>
-                    <a href="#" class="btn-secondary w-100 mt-1">Visitar Proyecto</a>
+                    <button class="btn-secondary w-100 mt-1 disabled-btn">En Desarrollo</button>
                 </article>
 
                 <article class="card cases-card">
@@ -94,12 +111,140 @@
                         <h3 class="card-value">Cosmos <span class="highlight">Mission</span></h3>
                         <p class="card-description">Juego interactivo y educativo de misiones espaciales.</p>
                     </div>
-                    <a href="https://misionea.pythonanywhere.com/" class="btn-secondary w-100 mt-1">Visitar Proyecto</a>
+                    <a href="https://misioncosmos.nexolionstudio.ar" target="_blank" class="btn-secondary w-100 mt-1">Visitar Proyecto</a>
                 </article>
             </div>
         </section>
+		
+		<section id="nosotros" class="section pattern-neural-bg" style="border-radius: var(--border-radius); box-shadow: var(--shadow-card); padding: 4rem 2rem; margin: 2rem 0;">
+			<div class="section-header">
+				<h2 class="section-title">Sobre <span class="highlight">Nosotros</span></h2>
+				<p class="section-subtitle">Innovación tecnológica desde Leones, Córdoba, para el mundo.</p>
+			</div>
+			
+			<div class="about-grid">
+				<div class="about-item">
+					<h3><span class="material-icons highlight">visibility</span> ¿Quiénes Somos?</h3>
+					<p>NexoLion Studio es una agencia de desarrollo de software especializada en la creación de Aplicaciones Web Progresivas (PWA). Nacimos con la convicción de democratizar el acceso a tecnología de alto rendimiento, combinando diseño moderno con arquitecturas robustas.</p>
+				</div>
+				
+				<div class="about-item">
+					<h3><span class="material-icons highlight">build</span> ¿Qué Hacemos?</h3>
+					<p>Desarrollamos ecosistemas digitales y productos SaaS. Desde la gestión financiera y agrícola hasta soluciones comerciales interactivas, integramos Inteligencia Artificial para optimizar procesos, reducir costos y escalar negocios de forma inteligente.</p>
+				</div>
+				
+				<div class="about-item">
+					<h3><span class="material-icons highlight">rocket_launch</span> ¿Qué Queremos?</h3>
+					<p>Nuestro horizonte es ser el socio tecnológico estratégico de emprendedores y empresas. Queremos eliminar las barreras técnicas, ofreciendo herramientas seguras, rentables e independientes de las tiendas de aplicaciones tradicionales.</p>
+				</div>
+			</div>
+		</section>
+		
+		<section id="pwa-info" class="section">
+			<div class="section-header">
+				<h2 class="section-title">El Poder de las <span class="highlight">PWA</span></h2>
+				<p class="section-subtitle">Aplicaciones Web Progresivas: La evolución del software móvil y de escritorio.</p>
+			</div>
+			
+			<div class="dashboard-grid">
+				<article class="card">
+					<div class="card-icon icon-success"><span class="material-icons">install_mobile</span></div>
+					<div class="card-data">
+						<h3 class="card-value pwa-card-title">Instalación Directa</h3>
+						<p class="card-description">Se instalan en un clic desde el navegador a tu pantalla de inicio. Sin pasar por Google Play o App Store. Cero comisiones de terceros, cero tiempos de espera.</p>
+					</div>
+				</article>
+				<article class="card">
+					<div class="card-icon icon-primary"><span class="material-icons">storage</span></div>
+					<div class="card-data">
+						<h3 class="card-value pwa-card-title">Ultra Ligeras</h3>
+						<p class="card-description">No colapsan la memoria de tu celular. Pesan apenas unos kilobytes, pero ofrecen la misma potencia, notificaciones y velocidad que una app nativa tradicional.</p>
+					</div>
+				</article>
+				<article class="card">
+					<div class="card-icon icon-warning"><span class="material-icons">devices</span></div>
+					<div class="card-data">
+						<h3 class="card-value pwa-card-title">Multiplataforma</h3>
+						<p class="card-description">Un solo desarrollo que funciona de manera impecable en Android, iOS, Windows y Mac. Tu negocio disponible en cualquier dispositivo al instante.</p>
+					</div>
+				</article>
+			</div>
+
+			<div class="showcase-container">
+				<div class="section-header">
+					<h3 class="section-title pwa-showcase-title">Así funciona una PWA: <span class="highlight">FinanzasPro</span></h3>
+					<p class="section-subtitle">Descubrí lo fácil que es instalar y utilizar nuestro ecosistema financiero en tu celular.</p>
+				</div>
+				
+				<div class="video-wrapper">
+					<video controls playsinline preload="metadata" class="responsive-video">
+						<source src="videos/finanzaspro-demo.mp4" type="video/mp4">
+						Tu navegador no soporta el reproductor de video.
+					</video>
+				</div>
+			</div>
+		</section>
+		
+        <section id="soporte" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Centro de <span class="highlight">Soporte</span></h2>
+                <p class="section-subtitle">¿Necesitas ayuda con una licencia o un presupuesto? Escríbenos.</p>
+            </div>
+            <div class="card support-card">
+                <form action="https://formsubmit.co/nexolionstudio@gmail.com" method="POST" class="support-form">
+                    <input type="hidden" name="_subject" value="NexoLion Soporte: Nuevo Requerimiento">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://www.nexolionstudio.com.ar">
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre / Empresa</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="" disabled selected>Selecciona un motivo...</option>
+                            <option value="Suscripcion_Licencia">Suscripciones / Licencias</option>
+                            <option value="Presupuesto">Solicitud de Presupuesto</option>
+                            <option value="Soporte_Tecnico">Problema Técnico / Visualización</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Detalla tu consulta aquí..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-100">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
         
-        </main>
+    </main>
+
+    <div id="chatbot-container" class="chatbot-wrapper">
+        <button id="chatbot-toggle" class="chatbot-btn">
+            <span class="material-icons">support_agent</span>
+        </button>
+        <div id="chatbot-window" class="chatbot-window hidden">
+            <div class="chatbot-header">
+                <h4>NexoLion Asistente</h4>
+                <button id="chatbot-close"><span class="material-icons">close</span></button>
+            </div>
+            <div class="chatbot-body">
+                <div class="chat-message bot-message">
+                    ¡Hola! Soy el asistente virtual de NexoLion Studio. ¿En qué puedo ayudarte hoy? (Suscripciones, Presupuestos, Soporte Técnico).
+                </div>
+                </div>
+            <div class="chatbot-footer">
+				<input type="text" id="chat-input" placeholder="Escribe tu consulta...">
+				<button id="chat-send"><span class="material-icons">send</span></button>
+			</div>
+        </div>
+    </div>
 
     <footer class="main-footer pattern-neural-bg">
         <div class="main-container footer-content">
@@ -118,7 +263,7 @@
                 </div>
                 <div class="footer-col support-col">
                     <h4>Soporte</h4>
-                    <a href="mailto:soporte@nexolion.com.ar" class="footer-link">soporte@nexolion.com.ar</a>
+                    <a href="#soporte" class="footer-link">Ir al formulario de contacto</a>
                 </div>
             </div>
             <div class="footer-copyright">

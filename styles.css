@@ -2,52 +2,47 @@
    NEXOLION STUDIO - SISTEMA DE ESTILOS CENTRAL
    ========================================================================== */
 
-/* === 1. VARIABLES GLOBALES & TEMAS (Paleta de image_10.png) === */
+/* === 1. VARIABLES GLOBALES & TEMAS === */
 :root {
-    /* Paleta de image_10.png (Predeterminado Claro) */
-    --bg-base: #f8f9fa;       /* Fondo súper claro */
-    --bg-card: #ffffff;       /* Fondo de tarjetas puro */
-    --border-color: #e5e7eb;  /* Bordes sutiles */
+    --bg-base: #f8f9fa;
+    --bg-card: #ffffff;
+    --border-color: #e5e7eb;
+    --text-main: #030712;
+    --text-muted: #4b5563;
     
-    /* Tipografía */
-    --text-main: #030712;     /* Texto principal muy oscuro */
-    --text-muted: #4b5563;    /* Texto secundario gris */
+    --color-primary: #002855;
+    --color-accent: #c9a060;
+    --color-neural: #4cc9f0;
+    --color-success: #10b981;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
     
-    /* Colores Semánticos */
-    --color-primary: #002855; /* Azul profundo del texto de image_10.png */
-    --color-accent: #c9a060;  /* Dorado de image_10.png */
-    --color-neural: #4cc9f0;  /* Cian sutil simulando las conexiones neurales */
-    --color-success: #10b981; /* Verde neón (reuse) */
-    --color-danger: #ef4444;  /* Rojo (reuse) */
-    --color-warning: #f59e0b; /* Naranja (reuse) */
-    
-    /* Sombras y Formas */
     --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-neural: 0 0 15px rgba(76, 201, 240, 0.3); /* Resplandor neural sutil */
+    --shadow-neural: 0 0 15px rgba(76, 201, 240, 0.3);
     --border-radius: 16px;
     
-    /* SVG Patrón Neural (Inspirado en image_10.png) */
     --pattern-neural: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a060' fill-opacity='0.08'%3E%3Cpath d='M50 40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zM10 70c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z'/%3E%3C/g%3E%3Cg fill='%234cc9f0' fill-opacity='0.05'%3E%3Cpath d='M30 40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z'/%3E%3C/g%3E%3Cg stroke='%234cc9f0' stroke-opacity='0.05'%3E%3Cpath d='M20 20l20 20m0 0l20-20M40 40L20 60m20-20l20 20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* === OVERRIDES PARA MODO OSCURO === */
 body.dark-mode {
-    --bg-base: #030712;       /* Fondo súper oscuro (reuse) */
-    --bg-card: #0b1120;       /* Fondo de tarjetas oscuro (reuse) */
-    --border-color: #1f2937;  /* Bordes sutiles oscuros (reuse) */
-    --text-main: #f3f4f6;     /* Texto principal claro (reuse) */
-    --text-muted: #9ca3af;    /* Texto secundario gris (reuse) */
-    --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.5); /* Sombra oscura (reuse) */
+    --bg-base: #030712;
+    --bg-card: #0b1120;
+    --border-color: #1f2937;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
     
-    /* SVG Patrón Neural Oscuro */
     --pattern-neural: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a060' fill-opacity='0.15'%3E%3Cpath d='M50 40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zM10 70c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z'/%3E%3C/g%3E%3Cg fill='%234cc9f0' fill-opacity='0.1'%3E%3Cpath d='M30 40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z'/%3E%3C/g%3E%3Cg stroke='%234cc9f0' stroke-opacity='0.1'%3E%3Cpath d='M20 20l20 20m0 0l20-20M40 40L20 60m20-20l20 20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* === 2. RESET, BASE & LAYOUT (Reuse de FinanzasPro) === */
+/* === 2. RESET, BASE & LAYOUT === */
 * { box-sizing: border-box; }
 
-body {
+html, body {
     margin: 0;
+    overflow-x: hidden; /* CORRECCIÓN: Previene el scroll horizontal */
+    width: 100%;
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-base);
     color: var(--text-main);
@@ -78,10 +73,14 @@ body.dark-mode .main-header { background-color: rgba(3, 7, 18, 0.85); }
 body.dark-mode .logo h1, body.dark-mode .logo h3 { color: #fff; }
 .accent-icon { color: var(--color-accent); font-size: 28px; }
 
-.main-nav { display: flex; align-items: center; gap: 1.5rem; }
-.main-nav a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
-.main-nav a:hover { color: var(--color-primary); }
-body.dark-mode .main-nav a:hover { color: #fff; }
+/* Navegación Desktop */
+.desktop-nav { display: flex; align-items: center; gap: 1.5rem; }
+.desktop-nav a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
+.desktop-nav a:hover { color: var(--color-primary); }
+body.dark-mode .desktop-nav a:hover { color: #fff; }
+
+/* Contenedor de acciones: Botón Tema + Hamburguesa */
+.header-actions { display: flex; align-items: center; gap: 15px; }
 
 .theme-btn {
     background: none; border: none; color: var(--text-muted); cursor: pointer;
@@ -90,7 +89,50 @@ body.dark-mode .main-nav a:hover { color: #fff; }
 }
 .theme-btn:hover { color: var(--color-neural); background-color: rgba(76, 201, 240, 0.05); }
 
-/* === 5. HERO SECTION (IA + PWA) === */
+/* Botón Hamburguesa */
+.hamburger-btn {
+    display: none; /* Oculto en PC */
+    background: none; border: none; color: var(--text-main); cursor: pointer; padding: 5px;
+}
+.hamburger-btn .material-icons { font-size: 28px; }
+
+/* Navegación Mobile Desplegable */
+.mobile-nav {
+    display: none; flex-direction: column; position: absolute;
+    top: 70px; left: 0; width: 100%;
+    background-color: var(--bg-card); border-bottom: 2px solid var(--color-primary);
+    padding: 10px 20px; box-shadow: var(--shadow-card); z-index: 999;
+}
+.mobile-nav.active { display: flex; }
+.mobile-link {
+    padding: 15px 0; color: var(--text-main); text-decoration: none; font-size: 16px;
+    border-bottom: 1px solid var(--border-color); font-weight: 600;
+}
+.mobile-link:last-child { border-bottom: none; }
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    text-align: left;
+    margin-top: 2rem;
+}
+.about-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+body.dark-mode .about-item h3 {
+    color: var(--color-neural);
+}
+.about-item p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* === 5. HERO SECTION === */
 .hero-section {
     padding: 6rem 1.5rem; text-align: center; border-radius: var(--border-radius);
     margin: 2rem 0; box-shadow: var(--shadow-neural);
@@ -100,7 +142,7 @@ body.dark-mode .main-nav a:hover { color: #fff; }
 .hero-tagline { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; max-width: 700px; margin: 0; }
 .hero-actions { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; }
 
-/* === 6. SISTEMA DE BOTONES (Reuse y adaptación de image_10.png) === */
+/* === 6. SISTEMA DE BOTONES === */
 .btn-primary, .btn-secondary {
     padding: 14px 24px; border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 600;
     color: #fff; cursor: pointer; text-decoration: none; text-align: center;
@@ -116,7 +158,13 @@ body.dark-mode .btn-primary:hover { box-shadow: 0 4px 10px rgba(76, 201, 240, 0.
 .btn-secondary:hover { box-shadow: 0 4px 10px rgba(201, 160, 96, 0.2); }
 body.dark-mode .btn-secondary { color: #fff; }
 
-/* === 7. SECCIONES GENERALES & DASHBOARD GRID (Reuse visual) === */
+/* Botones Deshabilitados (Próximamente) */
+.disabled-btn {
+    background-color: transparent; border: 1px solid var(--border-color);
+    color: var(--text-muted); cursor: not-allowed; opacity: 0.7; pointer-events: none;
+}
+
+/* === 7. SECCIONES GENERALES & DASHBOARD GRID === */
 .section { padding: 4rem 0; }
 .section-header { text-align: center; margin-bottom: 2.5rem; }
 .section-title { font-size: 2.2rem; font-weight: 700; margin: 0; color: var(--text-main); }
@@ -127,7 +175,7 @@ body.dark-mode .btn-secondary { color: #fff; }
     gap: 1.5rem; padding: 0.5rem;
 }
 
-/* === 8. TARJETAS (CARDS) SaaS & CASOS (Reuse y adaptación visual) === */
+/* === 8. TARJETAS (CARDS) SaaS & CASOS === */
 .card {
     background-color: var(--bg-card); border: 1px solid var(--border-color);
     border-radius: var(--border-radius); padding: 2rem; box-shadow: var(--shadow-card);
@@ -137,23 +185,104 @@ body.dark-mode .btn-secondary { color: #fff; }
 .card:hover { border-color: var(--color-neural); transform: translateY(-3px); box-shadow: var(--shadow-neural); }
 
 .card-icon { width: fit-content; padding: 15px; border-radius: 12px; }
-.icon-ai { background-color: rgba(139, 92, 246, 0.05); color: var(--color-neural); }
-.icon-success { background-color: rgba(16, 185, 129, 0.05); color: var(--color-success); }
-.icon-warning { background-color: rgba(245, 158, 11, 0.05); color: var(--color-warning); }
-.icon-primary { background-color: rgba(0, 40, 85, 0.05); color: var(--color-primary); }
+.icon-ai { background-color: rgba(139, 92, 246, 0.1); color: var(--color-neural); }
+.icon-success { background-color: rgba(16, 185, 129, 0.1); color: var(--color-success); }
+.icon-warning { background-color: rgba(245, 158, 11, 0.1); color: var(--color-warning); }
+.icon-primary { background-color: rgba(0, 40, 85, 0.1); color: var(--color-primary); }
+body.dark-mode .icon-primary { background-color: rgba(76, 201, 240, 0.1); color: var(--color-neural); }
 
 .card-data { display: flex; flex-direction: column; gap: 4px; }
 .card-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
 .card-value { font-size: 1.8rem; font-weight: 700; margin: 0; color: var(--color-primary); }
 body.dark-mode .card-value { color: #fff; }
 .card-description { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin: 0.5rem 0 0 0; }
-
 .card-subtext { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
 
-/* === 9. FOOTER ( Reuse visual adaptado) === */
+/* === 9. FORMULARIO DE SOPORTE === */
+.support-card { max-width: 600px; margin: 0 auto; }
+.support-form .form-group { margin-bottom: 15px; }
+.support-form label { display: block; margin-bottom: 5px; font-size: 14px; color: var(--text-muted); font-weight: 600;}
+.support-form input, .support-form select, .support-form textarea {
+    width: 100%; padding: 12px; background-color: var(--bg-base);
+    border: 1px solid var(--border-color); border-radius: 8px;
+    color: var(--text-main); font-family: 'Inter', sans-serif; transition: border-color 0.2s;
+}
+.support-form input:focus, .support-form select:focus, .support-form textarea:focus {
+    outline: none; border-color: var(--color-neural);
+}
+
+/* =========================================
+   SECCIÓN PWA & SHOWCASE DE VIDEO
+   ========================================= */
+
+.pwa-card-title {
+    font-size: 1.2rem;
+}
+
+.showcase-container {
+    margin-top: 4rem;
+}
+
+.pwa-showcase-title {
+    font-size: 1.8rem;
+}
+
+.video-wrapper {
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    background-color: #000;
+    border: 1px solid var(--border-color);
+}
+
+.responsive-video {
+    width: 100%;
+    display: block;
+    border-radius: inherit; /* Hereda las esquinas redondeadas del wrapper */
+}
+
+/* === 10. CHATBOT FLOTANTE === */
+.chatbot-wrapper { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+.chatbot-btn {
+    background-color: var(--color-primary); color: white; border: none; border-radius: 50%;
+    width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; box-shadow: 0 4px 15px rgba(0, 40, 85, 0.4); transition: transform 0.2s;
+}
+body.dark-mode .chatbot-btn { background-color: var(--color-accent); color: var(--color-primary); box-shadow: 0 4px 15px rgba(201, 160, 96, 0.4); }
+.chatbot-btn:hover { transform: scale(1.05); }
+
+.chatbot-window {
+    position: absolute; bottom: 80px; right: 0; width: 320px;
+    background-color: var(--bg-card); border: 1px solid var(--border-color);
+    border-radius: 12px; box-shadow: var(--shadow-card); overflow: hidden; display: flex; flex-direction: column;
+}
+.chatbot-header {
+    background-color: var(--color-primary); color: white; padding: 15px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+body.dark-mode .chatbot-header { background-color: #111827; border-bottom: 1px solid var(--border-color); }
+.chatbot-header h4 { margin: 0; font-size: 16px; }
+.chatbot-header button { background: none; border: none; color: white; cursor: pointer; }
+
+.chatbot-body { padding: 15px; height: 250px; overflow-y: auto; background-color: var(--bg-base); }
+.chat-message { padding: 10px; border-radius: 8px; font-size: 14px; line-height: 1.4; margin-bottom: 10px; }
+.bot-message { background-color: rgba(76, 201, 240, 0.1); border-left: 3px solid var(--color-neural); color: var(--text-main); }
+
+.chatbot-footer { display: flex; padding: 10px; background-color: var(--bg-card); border-top: 1px solid var(--border-color); }
+.chatbot-footer input { flex: 1; background: transparent; border: none; color: var(--text-main); padding: 8px; outline: none; }
+.chatbot-footer button { background: none; border: none; color: var(--color-neural); cursor: pointer; }
+
+/* === 11. FOOTER === */
 .main-footer {
     background-color: var(--color-primary); color: #fff;
     padding: 4rem 0 2rem 0; margin-top: 4rem; border-top: 2px solid var(--color-neural);
+}
+
+.main-footer .logo h1, 
+.main-footer .logo h3 { 
+    color: #ffffff !important; 
 }
 .footer-content { display: flex; flex-direction: column; gap: 2rem; }
 .footer-sections { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
@@ -162,3 +291,15 @@ body.dark-mode .card-value { color: #fff; }
 .footer-link:hover { color: var(--color-accent); }
 .footer-text { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin: 0; }
 .footer-copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+
+/* === 12. MEDIA QUERIES (MOBILE RESPONSIVE) === */
+@media (max-width: 1024px) {
+    .desktop-nav { display: none; }
+    .hamburger-btn { display: block; }
+    .hero-title { font-size: 2.2rem; }
+    .hero-actions { flex-direction: column; }
+    .chatbot-window { right: -10px; width: 300px; }
+}
+@media (min-width: 1025px) {
+    .mobile-nav { display: none !important; }
+}
