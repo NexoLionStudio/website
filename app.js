@@ -1,7 +1,3 @@
-/* ==========================================================================
-   NEXOLION STUDIO - LÓGICA DE INTERFAZ & MODO OSCURO
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- 1. LÓGICA DE CAMBIO DE TEMA (CLARO/OSCURO) ---
@@ -54,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hamburgerBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('active');
-        // Cambiar icono de menú a "X" (close) al abrir
         if (mobileMenu.classList.contains('active')) {
             hamburgerIcon.textContent = 'close';
         } else {
@@ -62,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Cerrar el menú automáticamente al tocar un enlace
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
@@ -78,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatSend = document.getElementById('chat-send');
     const chatBody = document.querySelector('.chatbot-body');
 
-    // Abrir/Cerrar la ventana
     chatbotToggle.addEventListener('click', () => {
         chatbotWindow.classList.toggle('hidden');
     });
@@ -87,12 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
         chatbotWindow.classList.add('hidden');
     });
 
-    // Función asíncrona para enviar el mensaje a Vercel/Gemini
     const sendMessage = async () => {
         const text = chatInput.value.trim();
         if (text === '') return;
 
-        // 1. Mostrar mensaje del usuario
         const userMsg = document.createElement('div');
         userMsg.className = 'chat-message';
         userMsg.style.backgroundColor = 'rgba(201, 160, 96, 0.1)';
@@ -105,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         chatInput.value = '';
         chatBody.scrollTop = chatBody.scrollHeight;
 
-        // 2. Mostrar indicador de "Escribiendo..."
         const typingMsg = document.createElement('div');
         typingMsg.className = 'chat-message bot-message';
         typingMsg.innerHTML = '<i>Escribiendo...</i>';
@@ -113,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
         chatBody.scrollTop = chatBody.scrollHeight;
 
         try {
-            // 3. Llamar a nuestra API oculta
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -122,19 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const data = await response.json();
             
-            // Borrar "Escribiendo..."
             chatBody.removeChild(typingMsg);
 
-            // 4. Mostrar respuesta de Gemini
             const botMsg = document.createElement('div');
             botMsg.className = 'chat-message bot-message';
-            // Reemplazamos los saltos de línea de texto por etiquetas <br> de HTML
             botMsg.innerHTML = data.reply.replace(/\n/g, '<br>');
             chatBody.appendChild(botMsg);
             chatBody.scrollTop = chatBody.scrollHeight;
 
         } catch (error) {
-            // Manejo de errores
             chatBody.removeChild(typingMsg);
             const errorMsg = document.createElement('div');
             errorMsg.className = 'chat-message bot-message';
@@ -143,11 +128,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Eventos de clic y tecla Enter
     chatSend.addEventListener('click', sendMessage);
     chatInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             sendMessage();
         }
     });
+	
+	// --- LÓGICA DEL FORMULARIO DE SOPORTE ---
+    const formSoporte = document.getElementById('form-soporte');
+    
+    if (formSoporte) {
+        formSoporte.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const btn = document.getElementById('btn-enviar');
+            const btnOriginalText = btn.innerText;
+
+            btn.innerText = 'Enviando...';
+            btn.disabled = true;
+
+            fetch(formSoporte.action, {
+                method: 'POST',
+                body: new FormData(formSoporte),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('¡Mensaje enviado con éxito! Nos contactaremos a la brevedad.');
+                    formSoporte.reset();
+                } else {
+                    alert('Hubo un problema al enviar el mensaje. Intenta nuevamente.');
+                }
+            })
+            .catch(error => {
+                alert('Error de conexión. Verifica tu internet e intenta nuevamente.');
+            })
+            .finally(() => {
+                btn.innerText = btnOriginalText;
+                btn.disabled = false;
+            });
+        });
+    }	
 });
